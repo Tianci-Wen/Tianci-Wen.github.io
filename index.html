@@ -139,6 +139,55 @@ cdict = {
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+    <tr onmouseout="liver_stop()" onmouseover="liver_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='liver_image'><video  width=100% muted autoplay loop>
+          <source src="img/liver.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='img/liver.jpg' width=100%>
+        </div>
+        <script type="text/javascript">
+          function nerfcasting_start() {
+            document.getElementById('liver_image').style.opacity = "1";
+          }
+
+          function nerfcasting_stop() {
+            document.getElementById('liver_image').style.opacity = "0";
+          }
+          nerfcasting_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="https://ieeexplore.ieee.org/document/10404014">
+          <papertitle>LIVER: A Tightly Coupled LiDAR-Inertial-Visual State Estimator With High Robustness for Underground Environments</papertitle>
+        </a>
+        <br>
+
+
+
+
+        <strong>Tianci Wen</strong>
+        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang *</a>,
+        Biao Lu,
+        Xuebo Zhang, 
+        Chaoquan Tang
+        <br>
+        <em>IEEE Robotics and Automation Letters (RA-L) with The IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) </em>, 2024
+        <br>
+        <p></p>
+        <p>
+        Robustly coupling multi-senors lets the robot localization and mapping robustly in real-world underground mines. 
+        </p>
+        <p></p>
+        <p>
+        Highly grateful for the kindly support from <strong>Xuebo Zhang</strong>, 
+        <a href="https://rh.nankai.edu.cn/info/1037/1146.htm">Zhixing Song</a>, and <strong>Chaoquan Tang</strong>. 
+        </p>
+      </td>
+    </tr>
+
 <!-- 
     <tr onmouseout="nerfcasting_stop()" onmouseover="nerfcasting_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
@@ -1856,35 +1905,6 @@ cdict = {
       </tr>
       </tbody></table>
 
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-        <tr>
-          <td>
-            <heading>Teaching</heading>
-          </td>
-        </tr>
-      </tbody></table>
-      <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-      <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="img/dragon.jpg" alt="dragon" width="160"></td>
-        <td width="75%" valign="center">
-        <p>
-          <a href="https://cs184.eecs.berkeley.edu/su20">
-          <papertitle>CS184 - Summer 2020 (Co-instructor)</papertitle>
-          </a>
-          <br><br>
-          <a href="https://cs184.eecs.berkeley.edu/sp17">
-          <papertitle>CS184 - Spring 2017 (GSI)</papertitle>
-          </a>
-          <br><br>
-          <a href="https://cs184.eecs.berkeley.edu/sp16">
-          <papertitle>CS184 - Spring 2016 (GSI)</papertitle>
-          </a>
-          <br>
-        </p>
-        </td>
-      </tr>
-      </tbody></table>
 -->
 
 
