@@ -220,14 +220,15 @@ cdict = {
       </td>
       <td style="padding:20px;width:75%;vertical-align:middle">
         <a >
-          <papertitle>A Tightly Coupled LiDAR-Inertial-Visual State Estimator for Snake Robot</papertitle>
+          <papertitle>A Tightly Coupled LiDAR-Inertial-Visual State Estimator for <strong>Snake Robot</strong></papertitle>
         </a>
         <br>
+        <p>Start from Dec. 2023</p>
         
         <strong>Tianci Wen</strong>,
         Wei Huang,
         Yihan Chen,
-        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>,
+        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>
         <br>
 
         <p></p>
@@ -236,6 +237,46 @@ cdict = {
           which serves as the head of the snake robot. 
           Various gaits and speeds of the snake robot were tested, all achieving high-precision localization and mapping (with errors within 2 cm compared to motion capture).
           This provides a foundation for the snake robot to perform navigation and obstacle avoidance in both indoor and outdoor environments. 
+        </p>
+      </td>
+    </tr>
+
+    <tr onmouseout="wheeled-leg_stop()" onmouseover="snake_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='wheeled-leg_image'><video  width=100% muted autoplay loop>
+          <source src="img/wheeled-leg_nav.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='img/wheeled-leg_nav.jpg' width=100%>
+        </div>
+        <script type="text/javascript">
+          function nerfcasting_start() {
+            document.getElementById('liver_image').style.opacity = "1";
+          }
+
+          function nerfcasting_stop() {
+            document.getElementById('liver_image').style.opacity = "0";
+          }
+          nerfcasting_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a >
+          <papertitle>A Navgation Framework for strong>wheeled-leg robot</strong></papertitle>
+        </a>
+        <br>
+        <p>Start from Dec. 2021</p>
+        
+        <strong>Tianci Wen</strong>,
+        Biao Lu,
+        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>
+        <br>
+
+        <p></p>
+        <p>
+          Discription: From the winter of 2021 to the summer of 2022, we implemented an indoor navigation 
+          framework for the wheeled-leg robot based on the ROS move_base framework and LiDAR-Inertial Odometry (LIO).
         </p>
       </td>
     </tr>
