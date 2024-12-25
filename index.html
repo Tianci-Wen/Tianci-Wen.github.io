@@ -198,13 +198,47 @@ cdict = {
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-      <td style="padding:20px;width:75%;vertical-align:middle">
+    <tr onmouseout="snake_stop()" onmouseover="snake_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='snake_image'><video  width=100% muted autoplay loop>
+          <source src="img/snake_lvi.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='img/snake_lvi.jpg' width=100%>
+        </div>
+        <script type="text/javascript">
+          function nerfcasting_start() {
+            document.getElementById('liver_image').style.opacity = "1";
+          }
 
-        <p>
-        Coming soon
-        </p>
-
+          function nerfcasting_stop() {
+            document.getElementById('liver_image').style.opacity = "0";
+          }
+          nerfcasting_stop()
+        </script>
       </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a >
+          <papertitle>LIVER: A Tightly Coupled LiDAR-Inertial-Visual State Estimator for Snake Robot</papertitle>
+        </a>
+        <br>
+        
+        <strong>Tianci Wen</strong>,
+        Wei Huang,
+        Yihan Chen,
+        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>,
+        <br>
+
+        <p></p>
+        <p>
+          Discription: We simultaneously integrated a LiDAR, camera, and IMU into a space of approximately 10 cubic centimeters,
+          which serves as the head of the snake robot. 
+          Various gaits and speeds of the snake robot were tested, all achieving high-precision localization and mapping (with errors within 2 cm compared to motion capture).
+          This provides a foundation for the snake robot to perform navigation and obstacle avoidance in both indoor and outdoor environments. 
+        </p>
+      </td>
+    </tr>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
