@@ -224,24 +224,24 @@ cdict = {
       </td>
     </tr>
 
-    <tr onmouseout="wheeled-leg_stop()" onmouseover="snake_start()">
+    <tr onmouseout="wl_stop()" onmouseover="wl_start()">
       <td style="padding:20px;width:35%;vertical-align:middle">
         <div class="one">
-          <div class="two" id='wheeled-leg_image'><video  width=100% muted autoplay loop>
-          <source src="img/wheeled-leg_nav.mp4" type="video/mp4">
+          <div class="two" id='wl_image'><video  width=100% muted autoplay loop>
+          <source src="img/wheeled-leg1.mp4" type="video/mp4">
           Your browser does not support the video tag.
           </video></div>
           <img src='img/wl_rob.jpg' width=100%>
         </div>
         <script type="text/javascript">
-          function nerfcasting_start() {
-            document.getElementById('liver_image').style.opacity = "1";
+          function wl_start() {
+            document.getElementById('wl_image').style.opacity = "1";
           }
 
-          function nerfcasting_stop() {
-            document.getElementById('liver_image').style.opacity = "0";
+          function wl_stop() {
+            document.getElementById('wl_image').style.opacity = "0";
           }
-          nerfcasting_stop()
+          wl_stop()
         </script>
       </td>
       <td style="padding:20px;width:65%;vertical-align:middle">
