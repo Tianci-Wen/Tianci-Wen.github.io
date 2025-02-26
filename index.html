@@ -125,6 +125,52 @@ cdict = {
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+    <tr onmouseout="scaffold_stop()" onmouseover="scaffold_start()">
+      <td style="padding:20px;width:35%;vertical-align:middle">
+         <div class="one">
+          <div class="two" id='scaffold_image'><video  width="250px" muted autoplay loop>
+          <source src="img/3dgsslam.mp4" type="video/mp4" >
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='img/mine.png'  width="250px">
+        </div>
+        <script type="text/javascript">
+          function scaffold_start() {
+            document.getElementById('scaffold_image').style.opacity = "1";
+          }
+
+          function scaffold_stop() {
+            document.getElementById('scaffold_image').style.opacity = "0";
+          }
+          scaffold_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:65%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2501.05242">
+          <papertitle>Scaffold-SLAM: Structured 3D Gaussians for Simultaneous Localization and Photorealistic Mapping</papertitle>
+        </a>
+        <br>
+        
+        <strong>Tianci Wen</strong>,
+        Zhiang Liu,
+        <a href="https://ai.nankai.edu.cn/info/1034/5388.htm"> Biao Lu</a>,
+        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>,
+        
+        <br>
+        <em> under review </em>
+        <br>
+        <a href="https://arxiv.org/abs/2501.05242">arxiv</a>
+        <p></p>
+        <p>
+        Scaffold-SLAM significantly outperforms state-of-the-art methods in photorealistic mapping quality across monocular, stereo, and RGB-D datasets. 
+        </p>
+        <p></p>
+        <p>
+        Highly grateful for the kindly support from <strong>Zhiang Liu</strong>. 
+        </p>
+      </td>
+    </tr>
+          
     <tr onmouseout="liver_stop()" onmouseover="liver_start()">
       <td style="padding:20px;width:35%;vertical-align:middle">
          <div class="one">
@@ -187,7 +233,7 @@ cdict = {
     <tr onmouseout="snake_stop()" onmouseover="snake_start()">
       <td style="padding:20px;width:35%;vertical-align:middle">
          <div class="one">
-          <div class="two" id='liver_image'><video  width=100% muted autoplay loop>
+          <div class="two" id='snake_image'><video  width=100% muted autoplay loop>
           <source src="img/snake.mp4" type="video/mp4" width="250px">
           Your browser does not support the video tag.
           </video></div>
@@ -195,11 +241,11 @@ cdict = {
         </div>
         <script type="text/javascript">
           function snake_start() {
-            document.getElementById('liver_image').style.opacity = "1";
+            document.getElementById('snake_image').style.opacity = "1";
           }
 
           function snake_stop() {
-            document.getElementById('liver_image').style.opacity = "0";
+            document.getElementById('snake_image').style.opacity = "0";
           }
           snake_stop()
         </script>
