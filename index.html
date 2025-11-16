@@ -73,8 +73,8 @@ cdict = {
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <p style="text-align:center">
           <name>Tianci Wen</name>
-        </p><p>Currently, i am focusing on <strong>world models</strong>, <strong>3D Gaussian splatting (3DGS)</strong>, 
-          and <strong>3D reconstruction</strong> to build a <strong>closed-loop simulator</strong> for autonomous driving and embodied AI. 
+        </p><p>Currently, i am focusing on <strong>world models</strong>, <strong>3D reconstruction</strong>, 
+          and <strong>3D generation</strong> to build a <strong>closed-loop simulator</strong> for autonomous driving and embodied AI. 
           </p>
 <p>
           I have a strong interest  in technologies of autonomous driving and embodied artificial intelligence, 
@@ -87,8 +87,8 @@ cdict = {
           at <a href="https://www.jlu.edu.cn/">Jilin University</a>.
 </p>
 <p>
-          Since April 2025, I have been working as an intern at DJI (Dajiang Innovation), researching and developing world models for drones. 
-          I am truly excited about advancing autonomous navigation and tracking for UAVs.
+          Since April 2025, I have been working as an intern at DJI (Dajiang Innovation). 
+          I am truly excited about autonomous navigation and tracking for UAVs.
         </p>
 
               <p style="text-align:center">
@@ -139,6 +139,54 @@ cdict = {
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+
+    <tr onmouseout="fastgs_stop()" onmouseover="fastgs_start()">
+      <td style="padding:20px;width:35%;vertical-align:middle">
+         <div class="one">
+          <div class="two" id='fastgs_image'><video  width="250px" muted autoplay loop>
+          <source src="img/segsslam_tumrgbd.mp4" type="video/mp4" >
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='img/30000_318.jpg'  width="250px">
+        </div>
+        <script type="text/javascript">
+          function fastgs_start() {
+            document.getElementById('fastgs_image').style.opacity = "1";
+          }
+
+          function fastgs_stop() {
+            document.getElementById('fastgs_image').style.opacity = "0";
+          }
+          fastgs_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:65%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2511.04283">
+          <papertitle>FastGS: Training 3D Gaussian Splatting in 100 Seconds</papertitle>
+        </a>
+        <br>
+        
+        Shiwei Ren*,
+        <strong>Tianci Wen*</strong>,
+        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang†</a>,
+        <a href="https://ai.nankai.edu.cn/info/1034/5388.htm"> Biao Lu</a>
+        
+        <a href="https://arxiv.org/abs/2511.04283">arxiv</a> / <a href="https://fastgs.github.io/">Project</a> 
+        / <a href="https://github.com/fastgs/FastGS">code</a>
+        <p></p>
+        <p>
+        FastGS: Training 3D Gaussian Splatting in 100 Seconds 
+        </p>
+        <p></p>
+        <p>
+        Highly grateful for the hardly work of <strong>Shiwei Ren</strong>. 
+        </p>
+      </td>
+    </tr>
+          
+
+          
+          
     <tr onmouseout="scaffold_stop()" onmouseover="scaffold_start()">
       <td style="padding:20px;width:35%;vertical-align:middle">
          <div class="one">
