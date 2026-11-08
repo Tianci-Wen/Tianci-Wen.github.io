@@ -1,2206 +1,417 @@
-
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110862391-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-110862391-1');
-  </script>
-
-  <title>Tianci Wen</title>
-  
-  <meta name="author" content="Tianci Wen">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+  <meta name="author" content="Tianci Wen">
+  <meta name="description" content="Tianci Wen is a PhD researcher at Nankai University working on world models, 3D reconstruction, 3D generation, and closed-loop simulation.">
+  <meta name="theme-color" content="#f5f4ef">
+  <link rel="canonical" href="https://tianci-wen.github.io/">
+  <meta property="og:title" content="Tianci Wen — World Models & 3D Reconstruction">
+  <meta property="og:description" content="Research in world models, 3D Gaussian Splatting, SLAM, and closed-loop simulation for autonomous systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tianci-wen.github.io/">
+  <meta property="og:image" content="https://tianci-wen.github.io/img/wtc2.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Tianci Wen — World Models & 3D Reconstruction</title>
   <link rel="icon" type="image/png" href="img/cycling.png">
-    
-  <style>
-
-    .pill-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin: 20px;
-    }
-
-    .pill {
-      border: 1px solid #ddd;
-      padding: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-align: center;
-      max-width: 800px;
-    }
-
-    .pill:hover {
-      background-color: #f1f1f1;
-    }
-
-    .thumbnail {
-      max-width: 160px;
-      height: auto;
-      transition: filter 0.3s;
-    }
-
-
-  </style>
-    
+  <link rel="stylesheet" href="css/site.css">
+  <script src="js/site.js" defer></script>
 </head>
-<!-- 
-cdict = {
-    'main_blue_purple': (163, 173, 239),
-    'deep_green': (33, 62, 12),
-    'vivid_blue': (21, 18, 226),
-    'alt_maroon': (84, 21, 24),
-    'light_green': (198, 244, 79),
-    'light_purple': (231, 199, 243),
-    'white': (255,255,255),
-    'black': (0,0,0),
-} -->
-
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <p style="text-align:center">
-          <name>Tianci Wen</name>
-        </p><p>Currently, i am focusing on <strong>world models</strong>, <strong>3D reconstruction</strong>, 
-          and <strong>3D generation</strong> to build a <strong>closed-loop simulator</strong> for autonomous driving and embodied AI. 
-          </p>
-<p>
-          I have a strong interest  in technologies of autonomous driving and embodied artificial intelligence, 
-          and I am incredibly excited and passionate about the future realization of autonomous driving and embodied artificial intelligence.
-</p>
-<p>
-          Since July 2021, I have been pursuing a five-year Ph.D. program at <a href="https://www.nankai.edu.cn/"> Nankai University</a>, 
-          under the supervision of Professor <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang</a>. 
-          From 2017 to 2021, I spent an unforgettable time completing my undergraduate studies 
-          at <a href="https://www.jlu.edu.cn/">Jilin University</a>.
-</p>
-<p>
-          Since April 2025, I have been working as an intern at DJI (Dajiang Innovation). 
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell nav-shell">
+      <a class="brand" href="#top" aria-label="Tianci Wen, back to top">
+        <span class="brand-mark">TW</span>
+        <span class="brand-name">Tianci Wen</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="nav-contact" href="mailto:wentc@mail.nankai.edu.cn">
+        Contact <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow hero-enter">
+          <span class="status-dot" aria-hidden="true"></span>
+          PhD researcher · Nankai University
         </p>
-
-              <p style="text-align:center">
-          <a href="mailto:wentc@mail.nankai.edu.cn">Email</a> &nbsp/&nbsp
-          <a href=" ">CV</a> &nbsp/&nbsp
-          <a href="https://scholar.google.com/citations?user=PRj_k5kAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-          <a href="https://github.com/Tianci-Wen">GitHub</a> 
-              </p>
-            </td>
-            <td style="padding:2.5%;width:25%;max-width:25%">
-    <a href="img/wtc.jpg">
-        <img src="img/wtc2.jpg" width="150px"></a>
-            </td>
-          </tr>
-        </tbody></table>
-
-
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-        <tr>
-          <td>
-            <heading>Highlights</heading>
-          </td>
-        </tr>
-      </tbody></table>
-
-        
-<div class="pill-container" >
-  <div class="pill fastgs" >
-    <a href="https://fastgs.github.io/"><video muted autoplay loop class="thumbnail" src="img/fastgs_video.mp4" alt="fastgs"></a>
-    <p><a href="https://arxiv.org/pdf/2511.04283"><papertitle>FastGS</papertitle></a><br>3DGS acceleration</p>
-  </div>
-  <div class="pill segsslam" >
-    <a href="https://segs-slam.github.io/"><video muted autoplay loop class="thumbnail" src="img/segsslam_tumrgbd.mp4" alt="segsslam"></a>
-    <p><a href="https://arxiv.org/abs/2501.05242"><papertitle>SEGS-SLAM</papertitle></a><br>3DGS-based SLAM</p>
-  </div>
-  <div class="pill liver" >
-    <a href="https://youtu.be/8p0a-cK7LZ0"><video muted autoplay loop class="thumbnail" src="img/liver_x264.mp4" alt="liver"></a>
-    <!-- <video  width="250px" muted autoplay loop ><source src="img/liver_x264.mp4" type="video/mp4" >  -->
-    <p><a href="https://ieeexplore.ieee.org/document/10404014"><papertitle>LIVER</papertitle></a><br>SLAM in underground mine</p>
-  </div>
-</div>
-  
-
-
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-
-    <tr onmouseout="fastgs_stop()" onmouseover="fastgs_start()">
-      <td style="padding:20px;width:35%;vertical-align:middle">
-         <div class="one">
-          <div class="two" id='fastgs_image'><video  width="250px" muted autoplay loop>
-          <source src="img/fastgs_video.mp4" type="video/mp4" >
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/fastgs_image.jpeg'  width="250px">
+        <h1 class="hero-title hero-enter">
+          Tianci <span>Wen</span>
+        </h1>
+        <p class="hero-lede hero-enter">
+          Building <strong>world models</strong> and <strong>3D reconstruction</strong>
+          systems that connect perception, generation, and closed-loop simulation.
+        </p>
+        <p class="hero-body hero-enter">
+          I am pursuing a PhD at <a href="https://www.nankai.edu.cn/" target="_blank" rel="noreferrer">Nankai University</a>,
+          advised by Prof. <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244" target="_blank" rel="noreferrer">Yongchun Fang</a>.
+          Since April 2025, I have also been an intern at DJI. My goal is to make simulated worlds
+          realistic and reliable enough for autonomous driving and embodied intelligence.
+        </p>
+        <div class="hero-actions hero-enter">
+          <a class="button button-primary" href="mailto:wentc@mail.nankai.edu.cn">Get in touch</a>
+          <a class="button button-quiet" href="data/cv.pdf">Curriculum vitae</a>
+          <a class="button button-quiet" href="https://scholar.google.com/citations?user=PRj_k5kAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="button button-quiet" href="https://github.com/Tianci-Wen" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-        <script type="text/javascript">
-          function fastgs_start() {
-            document.getElementById('fastgs_image').style.opacity = "1";
-          }
-
-          function fastgs_stop() {
-            document.getElementById('fastgs_image').style.opacity = "0";
-          }
-          fastgs_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:65%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2511.04283">
-          <papertitle>FastGS: Training 3D Gaussian Splatting in 100 Seconds</papertitle>
-        </a>
-        <br>
-        
-        Shiwei Ren*,
-        <strong>Tianci Wen*</strong>,
-        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang†</a>,
-        <a href="https://ai.nankai.edu.cn/info/1034/5388.htm"> Biao Lu</a>
-        <br>
-        
-        <a href="https://arxiv.org/abs/2511.04283">arxiv</a> / <a href="https://fastgs.github.io/">Project</a> 
-        / <a href="https://github.com/fastgs/FastGS">code</a>
-        <p></p>
-        <p>
-        FastGS: Training 3D Gaussian Splatting in 100 Seconds 
-        </p>
-        <p></p>
-        <p>
-        Highly grateful for the hardly work of <strong>Shiwei Ren</strong>. 
-        </p>
-      </td>
-    </tr>
-          
-
-          
-          
-    <tr onmouseout="scaffold_stop()" onmouseover="scaffold_start()">
-      <td style="padding:20px;width:35%;vertical-align:middle">
-         <div class="one">
-          <div class="two" id='scaffold_image'><video  width="250px" muted autoplay loop>
-          <source src="img/segsslam_tumrgbd.mp4" type="video/mp4" >
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/30000_318.jpg'  width="250px">
+        <div class="hero-focus hero-enter" aria-label="Research interests">
+          <span>World models</span>
+          <span>3D Gaussian Splatting</span>
+          <span>SLAM</span>
+          <span>Closed-loop simulation</span>
         </div>
-        <script type="text/javascript">
-          function scaffold_start() {
-            document.getElementById('scaffold_image').style.opacity = "1";
-          }
+      </div>
 
-          function scaffold_stop() {
-            document.getElementById('scaffold_image').style.opacity = "0";
-          }
-          scaffold_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:65%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2501.05242">
-          <papertitle>SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding</papertitle>
-        </a>
-        <br>
-        
-        <strong>Tianci Wen</strong>,
-        Zhiang Liu,
-        <a href="https://ai.nankai.edu.cn/info/1034/5388.htm"> Biao Lu</a>,
-        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>
-        
-        <br>
-        <em> <strong>ICCV 2025</strong> </em>
-        <br>
-        <a href="https://arxiv.org/abs/2501.05242">arxiv</a> / <a href="https://segs-slam.github.io/">Project</a> / <a href="https://zhuanlan.zhihu.com/p/1922411865323045454/preview?comment=0&catalog=0">zhihu</a>
-        / <a href="https://github.com/leaner-forever/SEGS-SLAM">code</a>
-        <p></p>
-        <p>
-        SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding 
-        </p>
-        <p></p>
-        <p>
-        Highly grateful for the kindly support from <strong>Zhiang Liu</strong>. 
-        </p>
-      </td>
-    </tr>
-          
-    <tr onmouseout="liver_stop()" onmouseover="liver_start()">
-      <td style="padding:20px;width:35%;vertical-align:middle">
-         <div class="one">
-          <div class="two" id='liver_image'><video  width="250px" muted autoplay loop>
-          <source src="img/liver_x264.mp4" type="video/mp4" >
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/mine.png'  width="250px">
+      <aside class="hero-visual hero-enter" aria-label="Portrait and current focus">
+        <figure class="portrait-card">
+          <a class="portrait-link" href="img/wtc.jpg" aria-label="View a larger portrait of Tianci Wen">
+            <img src="img/wtc2.jpg" alt="Portrait of Tianci Wen" width="2304" height="4992" fetchpriority="high">
+          </a>
+        </figure>
+        <div class="focus-card">
+          <span class="focus-card-label">Current focus</span>
+          <p>Closed-loop simulation with coherent appearance, geometry, and sensor behavior.</p>
         </div>
-        <script type="text/javascript">
-          function liver_start() {
-            document.getElementById('liver_image').style.opacity = "1";
-          }
+      </aside>
+    </section>
 
-          function liver_stop() {
-            document.getElementById('liver_image').style.opacity = "0";
-          }
-          liver_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:65%;vertical-align:middle">
-        <a href="https://ieeexplore.ieee.org/document/10404014">
-          <papertitle>LIVER: A Tightly Coupled LiDAR-Inertial-Visual State Estimator With High Robustness for Underground Environments</papertitle>
-        </a>
-        <br>
-        
-        <strong>Tianci Wen</strong>,
-        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>,
-        <a href="https://ai.nankai.edu.cn/info/1034/5388.htm"> Biao Lu</a>,
-        <a href="https://rh.nankai.edu.cn/info/1016/1136.htm"> Xuebo Zhang</a>, 
-        <a href="https://cmee.cumt.edu.cn/info/1116/5210.htm"> Chaoquan Tang </a>
-        <br>
-        <em> RA-L with IROS </em>, 2024, oral
-        <br>
-        <a href="https://youtu.be/8p0a-cK7LZ0">video</a>
-        /
-        <a href="img/LIVER_GraphicalAbstract.jpg">poster</a>
-        <p></p>
-        <p>
-        Carefully coupled multi-senors lets the robot localization and mapping robustly in real-world underground mines. 
-        </p>
-        <p></p>
-        <p>
-        Highly grateful for the kindly support from <strong>Xuebo Zhang</strong>, 
-        <a href="https://rh.nankai.edu.cn/info/1037/1146.htm">Zhixing Song</a>, and <strong>Chaoquan Tang</strong>. 
-        </p>
-      </td>
-    </tr>
-
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Robot projects</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-    <tr onmouseout="snake_stop()" onmouseover="snake_start()">
-      <td style="padding:20px;width:35%;vertical-align:middle">
-         <div class="one">
-          <div class="two" id='snake_image'><video  width=250px muted autoplay loop>
-          <source src="img/snake_x264.mp4" type="video/mp4" width="250px">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/snake_lvi.jpg'  width="250px">
+    <section class="section shell" id="work">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">Selected work</p>
+          <h2>Research with a physical point of view.</h2>
         </div>
-        <script type="text/javascript">
-          function snake_start() {
-            document.getElementById('snake_image').style.opacity = "1";
-          }
-
-          function snake_stop() {
-            document.getElementById('snake_image').style.opacity = "0";
-          }
-          snake_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:65%;vertical-align:middle">
-        <a >
-          <papertitle>A Tightly Coupled LiDAR-Inertial-Visual State Estimator for <strong>Snake Robot</strong></papertitle>
-        </a>
-        <br>
-        <strong>Tianci Wen</strong>,
-        Wei Huang,
-        Yihan Chen,
-        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>
-        <br>
-        Start from Dec. 2023
-        
-
-
-        <p></p>
-        <p>
-          Discription: We simultaneously integrated a LiDAR, camera, and IMU into a space of approximately 10 cubic centimeters. 
-          Various gaits and speeds of the snake robot were tested, all achieving high-precision localization and mapping (with errors within 2 cm compared to motion capture).
+        <p class="section-note">
+          From efficient 3D reconstruction to robust state estimation in demanding real-world environments.
         </p>
-      </td>
-    </tr>
-
-    <tr onmouseout="wl_stop()" onmouseover="wl_start()">
-      <td style="padding:20px;width:35%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='wl_image'><video  width="250px" muted autoplay loop>
-          <source src="img/wheeled-leg1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/wl_rob.jpg' width="150px">
-        </div>
-        <script type="text/javascript">
-          function wl_start() {
-            document.getElementById('wl_image').style.opacity = "1";
-          }
-
-          function wl_stop() {
-            document.getElementById('wl_image').style.opacity = "0";
-          }
-          wl_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:65%;vertical-align:middle">
-        <a >
-          <papertitle>A Navgation Framework for <strong>wheeled-leg robot</strong></papertitle>
-        </a>
-        <br>
-        <strong>Tianci Wen</strong>,
-        Biao Lu,
-        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>
-        <br>
-
-        From the winter of 2021 to the summer of 2022
-        
-
-        <p></p>
-        <p>
-          Discription: We implemented an indoor navigation 
-          framework for the wheeled-leg robot based on the ROS move_base framework and LiDAR-Inertial Odometry (LIO).
-        </p>
-      </td>
-    </tr>
-
-
-        <tr onmouseout="xugong_stop()" onmouseover="xugong_start()">
-      <td style="padding:20px;width:35%;vertical-align:middle">
-         <div class="one">
-          <div class="two" id='xugong_image'><video  width="250px" muted autoplay loop>
-          <source src="img/crane.mp4" type="video/mp4" >
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/crane_sensors.jpg'  width="250px">
-        </div>
-        <script type="text/javascript">
-          function xugong_start() {
-            document.getElementById('xugong_image').style.opacity = "1";
-          }
-
-          function xugong_stop() {
-            document.getElementById('xugong_image').style.opacity = "0";
-          }
-          xugong_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:65%;vertical-align:middle">
-        <a >
-          <papertitle>Development of an L3 Intelligent Crane Operation Control System (Xuzhou Engineering Machinery Industry 'Key Technology Research' project)</papertitle>
-        </a>
-        <br>
-        
-        <strong>Tianci Wen</strong>,
-        Yihan Chen, 
-        Shiwei Ren,
-        <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>,
-        <a href="https://ai.nankai.edu.cn/info/1034/5388.htm"> Biao Lu</a>
-        <br>
-        Since the end of 2023
-        <br>
-        <p></p>
-        <p>
-          We are currently working on the software and hardware development, 
-          as well as the implementation, of a SLAM system for a giant industrial crane.
-        </p>
-      </td>
-    </tr>  
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Seniors</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-      <td style="padding:20px;width:75%;vertical-align:middle">
-
-        <p>
-        <a href="https://rh.nankai.edu.cn/info/1037/1146.htm">Zhixing Song</a>: The guide in SLAM and research
-        </p>
-        <p>
-        <a href="https://github.com/ghm0819/ghm0819.github.io">Haiming Gao</a>: The guide in research direction
-        </p>
-
-      </td>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Early-stage papers in control</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-      <td style="padding:20px;width:75%;vertical-align:middle">
-
-        <p>
-          <br>
-          <strong>Tianci Wen</strong>,
-          <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>,
-          Biao Lu. 
-         <a href="https://doi.org/10.1007/s43684-021-00019-7">
-          Neural network-based adaptive sliding mode control for underactuated dual overhead cranes suffering from matched and unmatched disturbances. </a> 
-          Auton. Intell. Syst. 2, 1 (2022). 
-          <br>
-          <br>
-          <strong>Tianci Wen</strong>,
-          <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244">Yongchun Fang*</a>,
-          Biao Lu. 
-         <a href="http://dx.chinadoi.cn/10.16383/j.aas.c211062">
-          Adaptive antiswing control for underactuated dual overhead crane system using neural network.  </a> 
-          Acta Automatica Sinica, 2023, 49(1): 111−121
-
-          <br>
-        </p>
-     </td>
-
-
-          
-    
-<!-- 
-    <tr onmouseout="nerfcasting_stop()" onmouseover="nerfcasting_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='nerfcasting_image'><video  width=100% muted autoplay loop>
-          <source src="img/nerfcasting.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/nerfcasting.jpg' width=100%>
-        </div>
-        <script type="text/javascript">
-          function nerfcasting_start() {
-            document.getElementById('nerfcasting_image').style.opacity = "1";
-          }
-
-          function nerfcasting_stop() {
-            document.getElementById('nerfcasting_image').style.opacity = "0";
-          }
-          nerfcasting_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://nerf-casting.github.io/">
-          <papertitle>NeRF-Casting: Improved View-Dependent Appearance with Consistent Reflections</papertitle>
-        </a>
-        <br>
-        
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-        <a href="https://phogzone.com/">Peter Hedman</a>,
-        <a href="https://benattal.github.io/">Benjamin Attal</a>, 
-        <strong>Ben Mildenhall</strong>,
-        <a href="https://szeliski.org/RichardSzeliski.htm">Richard Szeliski</a>,
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>
-        <br>
-        <em>SIGGRAPH Asia</em>, 2024
-        <br>
-        <a href="https://nerf-casting.github.io/">project page</a>
-        /
-        <a href="https://arxiv.org/abs/2405.14871">arXiv</a>
-        <p></p>
-        <p>
-        Carefully casting reflection rays lets us synthesize photorealistic specularities in real-world scenes.
-        </p>
-      </td>
-    </tr>
-
-
-    <tr onmouseout="flash_cache_stop()" onmouseover="flash_cache_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='flash_cache_image'><video  width=100% muted autoplay loop>
-          <source src="img/flash_cache.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/flash_cache.png' width=100%>
-        </div>
-        <script type="text/javascript">
-          function flash_cache_start() {
-            document.getElementById('flash_cache_image').style.opacity = "1";
-          }
-
-          function flash_cache_stop() {
-            document.getElementById('flash_cache_image').style.opacity = "0";
-          }
-          flash_cache_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://benattal.github.io/flash-cache/">
-          <papertitle>Flash Cache: Reducing Bias in Radiance Cache Based Inverse Rendering</papertitle>
-        </a>
-        <br>
-        <a href="https://benattal.github.io/">Benjamin Attal</a>,
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <strong>Ben Mildenhall</strong>,
-        <a href="https://phogzone.com/">Peter Hedman</a>, 
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <a href="https://www.cs.cmu.edu/~motoole2/">Matthew O'Toole</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul P. Srinivasan</a>
-        <br>
-        <em>ECCV</em>, 2024   <font color="red"><strong>(oral)</strong></font>
-        <br>
-        <a href="https://benattal.github.io/flash-cache/">project page</a>
-        /
-        <a href="TODO">arXiv</a>
-        <p></p>
-        <p>
-          Radiance caching enables more physically accurate inverse rendering to recover geometry, materials, and lighting from RGB images of an object or scene.
-        </p>
-      </td>
-    </tr>
-
-    <tr onmouseout="nuvo_stop()" onmouseover="nuvo_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='nuvo_image'><video  width=100% muted autoplay loop>
-          <source src="img/nuvo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/nuvo.jpg' width=100%>
-        </div>
-        <script type="text/javascript">
-          function nuvo_start() {
-            document.getElementById('nuvo_image').style.opacity = "1";
-          }
-
-          function nuvo_stop() {
-            document.getElementById('nuvo_image').style.opacity = "0";
-          }
-          nuvo_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://pratulsrinivasan.github.io/nuvo/">
-          <papertitle>Nuvo: Neural UV Mapping for Unruly 3D Representations</papertitle>
-        </a>
-        <br>
-        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-        <a href="http://stephangarbin.com/">Stephan J. Garbin</a>,
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <strong>Ben Mildenhall</strong>
-        <br>
-        <em>ECCV</em>, 2024
-        <br>
-        <a href="https://pratulsrinivasan.github.io/nuvo/">project page</a>
-        /
-        <a href="https://www.youtube.com/watch?v=hmJiOSTDQZI">video</a>
-        /
-        <a href="http://arxiv.org/abs/2312.05283">arXiv</a>
-        <p></p>
-        <p>
-        Use neural fields to recover editable UV mappings for challenging geometry (e.g. NeRFs, marching cubes meshes, DreamFusion).
-        </p>
-      </td>
-    </tr>
-
-
-    <tr onmouseout="bog_stop()" onmouseover="bog_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='bog_image'><video  width=100% muted autoplay loop>
-          <source src="img/bog.jpg" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/bog.jpg' width=100%>
-        </div>
-        <script type="text/javascript">
-          function bog_start() {
-            document.getElementById('bog_image').style.opacity = "1";
-          }
-
-          function bog_stop() {
-            document.getElementById('bog_image').style.opacity = "0";
-          }
-          bog_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://creiser.github.io/binary_opacity_grid/">
-          <papertitle>Binary Opacity Grids: Capturing Fine Geometric Detail for Mesh-Based View Synthesis
-</papertitle>
-        </a>
-        <br>
-        <a href="https://creiser.github.io/">Christian Reiser</a>,
-        <a href="http://stephangarbin.com/">Stephan J. Garbin</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <a href="https://szeliski.org/RichardSzeliski.htm">Richard Szeliski</a>,<br>
-        <strong>Ben Mildenhall</strong>,
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <a href="https://phogzone.com/">Peter Hedman</a>*,
-        <a href="https://www.cvlibs.net/">Andreas Geiger</a>*   
-        <br>
-        <em>SIGGRAPH</em>, 2024
-        <br>
-        <a href="https://creiser.github.io/binary_opacity_grid/">project page</a>
-        /
-        <a href="https://www.youtube.com/watch?v=2TPUmGRg8bM">video</a>
-        /
-        <a href="https://arxiv.org/abs/2402.12377">arXiv</a>
-        <p></p>
-        <p>
-        Apply anti-aliasing to a discrete opacity grid to enable highly-detailed mesh recovery.
-        </p>
-      </td>
-    </tr>
-
-
-    <tr onmouseout="recon_stop()" onmouseover="recon_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='recon_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="img/recon.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/recon.png' width="160">
-        </div>
-        <script type="text/javascript">
-          function recon_start() {
-            document.getElementById('recon_image').style.opacity = "1";
-          }
-
-          function recon_stop() {
-            document.getElementById('recon_image').style.opacity = "0";
-          }
-          recon_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://reconfusion.github.io/">
-          <papertitle>ReconFusion: 3D Reconstruction with Diffusion Priors</papertitle>
-        </a>
-        <br>
-        <a href="https://www.cs.columbia.edu/~rundi/">Rundi Wu*</a>,
-        <strong>Ben Mildenhall*</strong>,
-        <a href="https://henzler.github.io/">Philipp Henzler</a>,
-        <a href="https://keunhong.com/">Keunhong Park</a>,
-        <a href="https://ruiqigao.github.io/">Ruiqi Gao</a>,
-        <a href="https://scholar.google.com/citations?user=_pKKv2QAAAAJ&hl=en/">Daniel Watson</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <a href="https://poolio.github.io/">Ben Poole</a>,
-        <a href="https://holynski.org/">Aleksander Holynski*</a>
-        <br>
-        <em>CVPR</em>, 2024
-        <br>
-        <a href="https://reconfusion.github.io/">project page</a>
-        /
-        <a href="https://arxiv.org/abs/">arXiv</a>
-        <p></p>
-        <p>
-        Finetune an image diffusion model to accept multiview inputs, then use it to regularize radiance field reconstruction.
-        </p>
-      </td>
-    </tr>
-
-
-    <tr onmouseout="eclipse_stop()" onmouseover="eclipse_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='eclipse_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="img/eclipse_after.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/eclipse_before.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function eclipse_start() {
-            document.getElementById('eclipse_image').style.opacity = "1";
-          }
-
-          function eclipse_stop() {
-            document.getElementById('eclipse_image').style.opacity = "0";
-          }
-          eclipse_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://dorverbin.github.io/eclipse">
-          <papertitle>Eclipse: Disambiguating Illumination and Materials using Unintended Shadows</papertitle>
-        </a>
-        <br>
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <strong>Ben Mildenhall</strong>,
-        <a href="https://phogzone.com/">Peter Hedman</a>,
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <a href="Todd Zickler">Todd Zickler</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>
-        <br>
-        <em>CVPR</em>, 2024   <font color="red"><strong>(oral)</strong></font>
-        <br>
-        <a href="https://dorverbin.github.io/eclipse">project page</a>
-        /
-        <a href="https://www.youtube.com/watch?v=amQLGyza3EU">video</a>
-        /
-        <a href="https://arxiv.org/abs/2305.16321">arXiv</a>
-        <p></p>
-        <p>
-        Shadows cast by unobserved occluders provide a high-frequency cue for recovering illumination and materials.
-        </p>
-      </td>
-    </tr>
-
-    <tr onmouseout="genten_stop()" onmouseover="genten_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='genten_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="img/genten.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/genten.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function genten_start() {
-            document.getElementById('genten_image').style.opacity = "1";
-          }
-
-          function genten_stop() {
-            document.getElementById('genten_image').style.opacity = "0";
-          }
-          genten_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://powers-of-10.github.io/">
-          <papertitle>Generative Powers of Ten</papertitle>
-        </a>
-        <br>
-        <a href="https://scholar.google.ch/citations?user=v3NXpJAAAAAJ&hl=en">Xiaojuan Wang</a>,
-        <a href="https://www.linkedin.com/in/jannekontkanen/">Janne Kontkanen</a>,
-        <a href="https://homes.cs.washington.edu/~curless/">Brian Curless</a>,
-        <a href="https://www.smseitz.com/">Steve Seitz</a>,
-        <a href="https://www.irakemelmacher.com/">Ira Kemelmacher</a>,<br>
-        <strong>Ben Mildenhall</strong>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <a href="https://holynski.org/">Aleksander Holynski</a>
-        <br>
-        <em>CVPR</em>, 2024  <font color="red"><strong>(highlight)</strong></font>
-        <br>
-        <a href="https://reconfusion.github.io/">project page</a>
-        /
-        <a href="https://arxiv.org/abs/">arXiv</a>
-        <p></p>
-        <p>
-        Use a text-to-image model to generate consistent content across drastically varying scales.
-        </p>
-      </td>
-    </tr>
-
-
-    <tr onmouseout="camp_stop()" onmouseover="camp_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='camp_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="img/camp.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/camp.png' width="160">
-        </div>
-        <script type="text/javascript">
-          function camp_start() {
-            document.getElementById('camp_image').style.opacity = "1";
-          }
-
-          function camp_stop() {
-            document.getElementById('camp_image').style.opacity = "0";
-          }
-          camp_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://camp-nerf.github.io/">
-          <papertitle>CamP: Camera Preconditioning for Neural Radiance Fields</papertitle>
-        </a>
-        <br>
-        <a href="https://keunhong.com/">Keunhong Park</a>,
-        <a href="https://henzler.github.io/">Philipp Henzler</a>,
-        <strong>Ben Mildenhall</strong>,
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <a href="http://www.ricardomartinbrualla.com/">Ricardo Martin-Brualla</a>
-        <br>
-        <em>SIGGRAPH Asia</em>, 2023
-        <br>
-        <a href="https://camp-nerf.github.io/">project page</a>
-        /
-        <a href="https://arxiv.org/abs/2308.10902">arXiv</a>
-        <p></p>
-        <p>
-        Preconditioning based on camera parameterization helps NeRF and camera extrinsics/intrinsics optimize better together.
-        </p>
-      </td>
-    </tr>
-
-
-    <tr onmouseout="zipnerf_stop()" onmouseover="zipnerf_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='zipnerf_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="img/portalscrop.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/portalscrop.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function zipnerf_start() {
-            document.getElementById('zipnerf_image').style.opacity = "1";
-          }
-
-          function zipnerf_stop() {
-            document.getElementById('zipnerf_image').style.opacity = "0";
-          }
-          zipnerf_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="http://jonbarron.info/zipnerf">
-          <papertitle>Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields</papertitle>
-        </a>
-        <br>
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <strong>Ben Mildenhall</strong>,
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-        <a href="https://phogzone.com/">Peter Hedman</a>
-        <br>
-        <em>ICCV</em>, 2023   <font color="red"><strong>(Best Paper Finalist)</strong></font>
-        <br>
-        <a href="http://jonbarron.info/zipnerf">project page</a>
-        /
-        <a href="https://www.youtube.com/watch?v=xrrhynRzC8k">video</a>
-        /
-        <a href="https://arxiv.org/abs/2304.06706">arXiv</a>
-        <p></p>
-        <p>
-        Combining mip-NeRF 360 and Instant NGP lets us reconstruct huge scenes.
-        </p>
-      </td>
-    </tr>
-    
-    
-    <tr onmouseout="db3d_stop()" onmouseover="db3d_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='db3d_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="img/owl.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/owl.png' width="160">
-        </div>
-        <script type="text/javascript">
-          function db3d_start() {
-            document.getElementById('db3d_image').style.opacity = "1";
-          }
-
-          function db3d_stop() {
-            document.getElementById('db3d_image').style.opacity = "0";
-          }
-          db3d_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://dreambooth3d.github.io/">
-          <papertitle>DreamBooth3D: Subject-Driven Text-to-3D Generation</papertitle>
-        </a>
-        <br>
-        
-<a href="https://amitraj93.github.io/">Amit Raj</a>, <a href="https://www.linkedin.com/in/srinivas-kaza-64223b74">Srinivas Kaza</a>, <a href="https://poolio.github.io/">Ben Poole</a>, <a href="https://m-niemeyer.github.io/">Michael Niemeyer</a>, <a href="https://natanielruiz.github.io/">Nataniel Ruiz</a>, 
-<strong>Ben Mildenhall</strong>, <a href="https://scholar.google.com/citations?user=I2qheksAAAAJ">Shiran Zada</a>, <a href="https://kfiraberman.github.io/">Kfir Aberman</a>, <a href="http://people.csail.mit.edu/mrub/">Michael Rubinstein</a>, 
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>, <a href="http://people.csail.mit.edu/yzli/">Yuanzhen Li</a>, <a href="https://varunjampani.github.io/">Varun Jampani</a>
-        <br>
-        <em>ICCV</em>, 2023
-        <br>
-        <a href="https://dreambooth3d.github.io/">project page</a> / 
-        <a href="https://arxiv.org/abs/2303.13508">arXiv</a>
-        <p></p>
-        <p>Combining DreamBooth (personalized text-to-image) and DreamFusion (text-to-3D) yields high-quality, subject-specific 3D assets with text-driven modifications</p>
-      </td>
-    </tr>
-
-
-    <tr onmouseout="bakedsdf_stop()" onmouseover="bakedsdf_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='bakedsdf_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="img/bakedsdf_after.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/bakedsdf_before.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function bakedsdf_start() {
-            document.getElementById('bakedsdf_image').style.opacity = "1";
-          }
-
-          function bakedsdf_stop() {
-            document.getElementById('bakedsdf_image').style.opacity = "0";
-          }
-          bakedsdf_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://bakedsdf.github.io/">
-          <papertitle>BakedSDF: Meshing Neural SDFs for Real-Time View Synthesis</papertitle>
-        </a>
-        <br>
-        <a href="https://lioryariv.github.io/">Lior Yariv*</a>,
-        <a href="https://phogzone.com/">Peter Hedman*</a>,
-        <a href="https://creiser.github.io/">Christian Reiser</a>,
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-        <a href="https://szeliski.org/RichardSzeliski.htm">Richard Szeliski</a>,
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <strong>Ben Mildenhall</strong>
-        <br>
-        <em>SIGGRAPH</em>, 2023
-        <br>
-        <a href="https://bakedsdf.github.io/">project page</a>
-        /
-        <a href="https://www.youtube.com/watch?v=fThKXZ6uDTk">video</a>
-        /
-        <a href="https://arxiv.org/abs/2302.14859">arXiv</a>
-        <p></p>
-        <p>
-        We achieve real-time view synthesis by baking a high quality mesh and fine-tuning a lightweight appearance model on top.
-        </p>
-      </td>
-    </tr>
-
-
-    <tr onmouseout="merf_stop()" onmouseover="merf_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='merf_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="img/merf_after.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='img/merf_before.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function merf_start() {
-            document.getElementById('merf_image').style.opacity = "1";
-          }
-
-          function merf_stop() {
-            document.getElementById('merf_image').style.opacity = "0";
-          }
-          merf_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://merf42.github.io/">
-          <papertitle>MERF: Memory-Efficient Radiance Fields for Real-time View Synthesis in Unbounded Scenes</papertitle>
-        </a>
-        <br>
-        <a href="https://creiser.github.io/">Christian Reiser</a>,
-        <a href="https://szeliski.org/RichardSzeliski.htm">Richard Szeliski</a>,
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-        <strong>Ben Mildenhall</strong>,
-        <a href="https://www.cvlibs.net/">Andreas Geiger</a>,
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <a href="https://phogzone.com/">Peter Hedman</a>
-        <br>
-        <em>SIGGRAPH</em>, 2023
-        <br>
-        <a href="https://merf42.github.io/">project page</a>
-        /
-        <a href="https://www.youtube.com/watch?v=3EACM2JAcxc">video</a>
-        /
-        <a href="https://arxiv.org/abs/2302.12249">arXiv</a>
-        <p></p>
-        <p>
-        We achieve real-time view synthesis using a volumetric rendering model with a compact representation combining a sparse 3D feature grid and 2D feature planes.
-        </p>
-      </td>
-    </tr>
-
-    
-
-    <tr onmouseout="alignerf_stop()" onmouseover="alignerf_start()">
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='alignerf_image'>
-            <img src='img/alignerf_after.jpg' width="160"></div>
-          <img src='img/alignerf_before.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function alignerf_start() {
-            document.getElementById('alignerf_image').style.opacity = "1";
-          }
-
-          function alignerf_stop() {
-            document.getElementById('alignerf_image').style.opacity = "0";
-          }
-          alignerf_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://yifanjiang19.github.io/alignerf">
-          <papertitle>AligNeRF: High-Fidelity Neural Radiance Fields via Alignment-Aware Training
-</papertitle>
-        </a>
-        <br>
-        <a href="https://yifanjiang.net/">Yifan Jiang</a>,
-        <a href="https://phogzone.com/">Peter Hedman</a>, 
-        <strong>Ben Mildenhall</strong>,
-        <a href="https://ir1d.github.io/">Dejia Xu</a>, 
-        <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-        <a href="https://spark.adobe.com/page/CAdrFMJ9QeI2y/">Zhangyang Wang</a>,
-        <a href="https://tianfan.info/">Tianfan Xue</a>
-        <br>
-        <em>CVPR</em>, 2023
-        <br>
-        <a href="https://yifanjiang19.github.io/alignerf">project page</a>
-        /
-        <a href="https://arxiv.org/abs/2211.09682">arXiv</a>
-        <p></p>
-        <p>
-        Accounting for misalignment due to scene motion or calibration errors improves NeRF reconstruction quality.
-        </p>
-      </td>
-    </tr>
-
-          <tr onmouseout="dreamfusion_stop()" onmouseover="dreamfusion_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='dreamfusion_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/dreamfusion.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/dreamfusion.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function dreamfusion_start() {
-                  document.getElementById('dreamfusion_image').style.opacity = "1";
-                }
-
-                function dreamfusion_stop() {
-                  document.getElementById('dreamfusion_image').style.opacity = "0";
-                }
-                dreamfusion_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://dreamfusion3d.github.io/">
-                <papertitle>DreamFusion: Text-to-3D using 2D Diffusion</papertitle>
-              </a>
-              <br>
-              <a href="https://cs.stanford.edu/~poole/">Ben Poole</a>,
-              <a href="https://www.ajayj.com/">Ajay Jain</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <strong>Ben Mildenhall</strong>
-              <br>
-              <em>ICLR</em>, 2023   <font color="red"><strong>(Outstanding Paper Award)</strong></font>
-              <br>
-              <a href="https://dreamfusion3d.github.io/">project page</a>
-              /
-              <a href="https://arxiv.org/abs/2209.14988">arXiv</a>
-              /
-              <a href="https://dreamfusion3d.github.io/gallery.html">gallery</a>
-              <p></p>
-              <p>
-              We optimize a NeRF from scratch using a pretrained text-to-image diffusion model to do text-to-3D generative modeling.
-              </p>
-            </td>
-          </tr>
-
-    
-          <tr onmouseout="malle_stop()" onmouseover="malle_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='malle_image'>
-                  <img src='img/MalleConv_after.jpg' width="160"></div>
-                <img src='img/MalleConv_before.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function malle_start() {
-                  document.getElementById('malle_image').style.opacity = "1";
-                }
-
-                function malle_stop() {
-                  document.getElementById('malle_image').style.opacity = "0";
-                }
-                malle_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://yifanjiang.net/MalleConv.html">
-                <papertitle>Fast and High-quality Image Denoising via Malleable Convolutions</papertitle>
-              </a>
-              <br>
-              <a href="https://yifanjiang.net/">Yifan Jiang</a>,
-              <a href="https://bartwronski.com/">Bartlomiej Wronski</a>, 
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <a href="https://spark.adobe.com/page/CAdrFMJ9QeI2y/">Zhangyang Wang</a>,
-              <a href="https://people.csail.mit.edu/tfxue/">Tianfan Xue</a>
-              <br>
-              <em>ECCV</em>, 2022
-              <br>
-              <a href="https://yifanjiang.net/MalleConv.html">project page</a>
-              /
-              <a href="https://arxiv.org/abs/2201.00392">arXiv</a>
-              <p></p>
-              <p>
-              We denoise images efficiently by predicting spatially-varying kernels at low resolution and using a fast fused op to jointly upsample and apply these kernels at full resolution.
-              </p>
-            </td>
-          </tr>
-
-    
-          <tr onmouseout="rawnerf_stop()" onmouseover="rawnerf_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='rawnerf_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/candle_crop_vid_fasterpull_240.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/candle_image0_patch_darker.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function rawnerf_start() {
-                  document.getElementById('rawnerf_image').style.opacity = "1";
-                }
-
-                function rawnerf_stop() {
-                  document.getElementById('rawnerf_image').style.opacity = "0";
-                }
-                rawnerf_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="rawnerf/index.html">
-                <papertitle>NeRF in the Dark: High Dynamic Range View Synthesis from Noisy Raw Images</papertitle>
-              </a>
-              <br>
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://phogzone.com/">Peter Hedman</a>,
-              <a href="http://www.ricardomartinbrualla.com/">Ricardo Martin-Brualla</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <a href="https://jonbarron.info/">Jonathan Barron</a>
-              <br>
-        <em>CVPR</em>, 2022   <font color="red"><strong>(oral)</strong></font>
-              <br>
-              <a href="rawnerf/index.html">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2111.13679">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=JtBS4KBcKVc">video</a>
-        /
-              <a href="https://github.com/google-research/multinerf">code</a>
-              <p></p>
-              <p>We train RawNeRF directly on linear raw camera images, enabling new HDR view synthesis applications and greatly increasing robustness to camera noise.</p>
-            </td>
-          </tr> 
-
-          <tr onmouseout="mip360_stop()" onmouseover="mip360_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='mip360_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/kitchenlego_square320_crf23.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/kitchenlego_square320.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function mip360_start() {
-                  document.getElementById('mip360_image').style.opacity = "1";
-                }
-
-                function mip360_stop() {
-                  document.getElementById('mip360_image').style.opacity = "0";
-                }
-                mip360_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://jonbarron.info/mipnerf360">
-                <papertitle>Mip-NeRF 360: Unbounded Anti-Aliased Neural Radiance Fields</papertitle>
-              </a>
-              <br>
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <a href="https://phogzone.com/">Peter Hedman</a>
-              <br>
-        <em>CVPR</em>, 2022   <font color="red"><strong>(oral)</strong></font>
-              <br>
-              <a href="http://jonbarron.info/mipnerf360">project page</a>
-              /
-              <a href="https://arxiv.org/abs/2111.12077">arXiv</a>
-              /
-              <a href="https://youtu.be/YStDS2-Ln1s">video</a>
-              /
-              <a href="https://github.com/google-research/multinerf">code</a>
-              <p></p>
-              <p>We extend mip-NeRF to produce photorealistic results on unbounded scenes.</p>
-            </td>
-          </tr> 
-
-        <tr onmouseout="refnerf_stop()" onmouseover="refnerf_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='refnerf_image'><video  width=100% height=100% muted autoplay loop>
-              <source src="img/refnerf.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-              </video></div>
-              <img src='img/refnerf.jpeg' width="160">
-            </div>
-            <script type="text/javascript">
-              function refnerf_start() {
-                document.getElementById('refnerf_image').style.opacity = "1";
-              }
-
-              function refnerf_stop() {
-                document.getElementById('refnerf_image').style.opacity = "0";
-              }
-              refnerf_stop()
-            </script>
-          </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://dorverbin.github.io/refnerf/index.html">
-                <papertitle>Ref-NeRF: Structured View-Dependent Appearance for Neural Radiance Fields</papertitle>
-              </a>
-              <br>
-              <a href="https://dorverbin.github.io/">Dor Verbin</a>,
-              <a href="https://phogzone.com/">Peter Hedman</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="Todd Zickler">Todd Zickler</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>
-              <br>
-        <em>CVPR</em>, 2022   <font color="red"><strong>(Best Student Paper Honorable Mention)</strong></font>
-              <br>
-              <a href="https://dorverbin.github.io/refnerf/index.html">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2112.03907">arXiv</a>
-        /
-              <a href="https://youtu.be/qrdRH9irAlk">video</a>
-        /
-              <a href="https://github.com/google-research/multinerf">code</a>
-              <p></p>
-              <p>Explicitly modeling reflections in NeRF produces realistic shiny surfaces and accurate surface normals, and lets you edit materials.</p>
-            </td>
-          </tr>
-
-          <tr onmouseout="blocknerf_stop()" onmouseover="blocknerf_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='blocknerf_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/grace_trim_square_320_crf25.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/grace_009.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function blocknerf_start() {
-                  document.getElementById('blocknerf_image').style.opacity = "1";
-                }
-
-                function blocknerf_stop() {
-                  document.getElementById('blocknerf_image').style.opacity = "0";
-                }
-                blocknerf_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://waymo.com/research/block-nerf/">
-                <papertitle>Block-NeRF: Scalable Large Scene Neural View Synthesis</papertitle>
-              </a>
-              <br>
-              <a href="http://matthewtancik.com/">Matthew Tancik</a>,
-              <a href="http://casser.io/">Vincent Casser</a>,
-              <a href="https://sites.google.com/site/skywalkeryxc/">Xinchen Yan</a>,
-              <a href="https://scholar.google.com/citations?user=5mJUkI4AAAAJ&hl=en">Sabeek Pradhan</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <a href="https://www.henrikkretzschmar.com/">Henrik Kretzschmar</a>
-              <br>
-        <em>CVPR</em>, 2022   <font color="red"><strong>(oral)</strong></font>
-              <br>
-              <a href="https://waymo.com/research/block-nerf/">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2202.05263">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=6lGMCAzBzOQ">video</a>
-              <p></p>
-              <p>We build city-scale scenes from many NeRFs, trained using millions of images.</p>
-            </td>
-          </tr> 
-    
-          <tr onmouseout="regnerf_stop()" onmouseover="regnerf_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='regnerf_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/n3_scan114_crop.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/dtu_114_n3.001.jpeg' width="160">
-              </div>
-              <script type="text/javascript">
-                function regnerf_start() {
-                  document.getElementById('regnerf_image').style.opacity = "1";
-                }
-
-                function regnerf_stop() {
-                  document.getElementById('regnerf_image').style.opacity = "0";
-                }
-                regnerf_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://m-niemeyer.github.io/regnerf/index.html">
-                <papertitle>RegNeRF: Regularizing Neural Radiance Fields for View Synthesis from Sparse Inputs</papertitle>
-              </a>
-              <br>
-              <a href="https://m-niemeyer.github.io/">Michael Niemeyer</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://msmsajjadi.github.io/">Mehdi S. M. Sajjadi</a>,
-              <a href="http://www.cvlibs.net/">Andreas Geiger</a>,
-              <a href="http://www2.informatik.uni-freiburg.de/~radwann/">Noha Radwan</a>
-              <br>
-        <em>CVPR</em>, 2022   <font color="red"><strong>(oral)</strong></font>
-              <br>
-              <a href="https://m-niemeyer.github.io/regnerf/index.html">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2112.00724">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=QyyyvA4-Kwc">video</a>
-              <p></p>
-              <p>We regularize unseen views during optimization to enable view synthesis from as few as 3 input images.</p>
-            </td>
-          </tr> 
-
-          <tr onmouseout="clipnerf_stop()" onmouseover="clipnerf_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='clipnerf_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/rooster320.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/rooster.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function clipnerf_start() {
-                  document.getElementById('clipnerf_image').style.opacity = "1";
-                }
-
-                function clipnerf_stop() {
-                  document.getElementById('clipnerf_image').style.opacity = "0";
-                }
-                clipnerf_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://ajayj.com/dreamfields">
-                <papertitle>Zero-Shot Text-Guided Object Generation with Dream Fields</papertitle>
-              </a>
-              <br>
-              <a href="https://www.ajayj.com/">Ajay Jain</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a>,
-              <a href="https://cs.stanford.edu/~poole/">Ben Poole</a>
-              <br>
-        <em>CVPR</em>, 2022
-              <br>
-              <a href="https://ajayj.com/dreamfields">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2112.01455">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=1Fke6w46tv4">video</a>
-        /
-              <a herf="https://github.com/google-research/google-research/tree/master/dreamfields">code</a>
-              <p></p>
-              <p>Supervising the CLIP embeddings of NeRF renderings allows us to generate 3D objects from text prompts alone.</p>
-            </td>
-          </tr> 
-
-          
-          <tr onmouseout="ddp_stop()" onmouseover="ddp_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='ddp_image'>
-                  <img src='img/ddp_after.jpg' width="160"></div>
-                <img src='img/ddp_before.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function ddp_start() {
-                  document.getElementById('ddp_image').style.opacity = "1";
-                }
-
-                function ddp_stop() {
-                  document.getElementById('ddp_image').style.opacity = "0";
-                }
-                ddp_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2112.03288">
-                <papertitle>Dense Depth Priors for Neural Radiance Fields from Sparse Input Views</papertitle>
-              </a>
-              <br>
-              <a href="https://niessnerlab.org/members/barbara_roessle/profile.html">Barbara Roessle</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>, 
-              <a href="https://www.niessnerlab.org/">Matthias Nießner</a>
-              <br>
-        <em>CVPR</em>, 2022
-              <br>
-              <a href="https://arxiv.org/abs/2112.03288">arXiv</a>
-              /
-              <a href="https://www.youtube.com/watch?v=zzkvvdcvksc">video</a>
-              <p></p>
-              <p>
-              We apply dense depth completion techniques to freely-available sparse stereo data to guide NeRF reconstructions from few input images.
-              </p>
-            </td>
-          </tr>
-
-          
-          <tr onmouseout="mipnerf_stop()" onmouseover="mipnerf_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='mipnerf_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/mipnerf_ipe.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/mipnerf_ipe.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function mipnerf_start() {
-                  document.getElementById('mipnerf_image').style.opacity = "1";
-                }
-
-                function mipnerf_stop() {
-                  document.getElementById('mipnerf_image').style.opacity = "0";
-                }
-                mipnerf_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://jonbarron.info/mipnerf">
-                <papertitle>Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields</papertitle>
-              </a>
-              <br>
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="http://matthewtancik.com/">Matthew Tancik</a>,
-              <a href="https://phogzone.com/">Peter Hedman</a>,
-              <a href="http://www.ricardomartinbrualla.com/">Ricardo Martin-Brualla</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>
-              <br>
-        <em>ICCV</em>, 2021   <font color="red"><strong>(Best Paper Honorable Mention)</strong></font>
-              <br>
-              <a href="http://jonbarron.info/mipnerf">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2103.13415">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=EpH175PY1A0">video</a>
-        /
-              <a href="https://github.com/google/mipnerf">code</a>
-              <p></p>
-              <p>We prefilter the positional encoding function and train NeRF to generate anti-aliased renderings.</p>
-            </td>
-          </tr> 
-
-
-          <tr onmouseout="snerg_stop()" onmouseover="snerg_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='snerg_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/bakenerf.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/bakenerf160.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function snerg_start() {
-                  document.getElementById('snerg_image').style.opacity = "1";
-                }
-
-                function snerg_stop() {
-                  document.getElementById('snerg_image').style.opacity = "0";
-                }
-                snerg_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://nerf.live">
-                <papertitle>Baking Neural Radiance Fields for Real-Time View Synthesis</papertitle>
-              </a>
-              <br>
-              <a href="https://phogzone.com/">Peter Hedman</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <a href="https://www.pauldebevec.com/">Paul Debevec</a>
-              <br>
-        <em>ICCV</em>, 2021   <font color="red"><strong>(oral)</strong></font> 
-              <br>
-              <a href="http://nerf.live">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2103.14645">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=5jKry8n5YO8">video</a>
-        /
-              <a href="https://nerf.live/#demos">demo</a>
-              <p></p>
-              <p>We bake a trained NeRF into a sparse voxel grid of colors and features in order to render it in real-time.</p>
-            </td>
-          </tr> 
-
-
-          <tr onmouseout="winr_stop()" onmouseover="winr_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='winr_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/notre_160.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/notre.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function winr_start() {
-                  document.getElementById('winr_image').style.opacity = "1";
-                }
-
-                function winr_stop() {
-                  document.getElementById('winr_image').style.opacity = "0";
-                }
-                winr_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://www.matthewtancik.com/learnit">
-                <papertitle>Learned Initializations for Optimizing Coordinate-Based Neural Representations</papertitle>
-              </a>
-              <br>
-              <a href="http://matthewtancik.com/">Matthew Tancik*</a>,
-              <strong>Ben Mildenhall*</strong>,
-              <a href="https://www.linkedin.com/in/terrance-wang/">Terrance Wang</a>,
-              <a href="https://www.linkedin.com/in/divi-schmidt-262044180/">Divi Schmidt</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>
-              <br>
-        <em>CVPR</em>, 2021   <font color="red"><strong>(oral)</strong></font>
-              <br>
-              <a href="http://www.matthewtancik.com/learnit">project page</a>
-        /
-              <a href="http://arxiv.org/abs/2012.02189">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=A-r9itCzcyo">video</a>
-        /
-              <a href="https://github.com/tancik/learnit">code</a>
-              <p></p>
-              <p>We use meta-learning to find weight initializations for coordinate-based MLPs that allow them to converge faster and generalize better.</p>
-            </td>
-          </tr> 
-
-
-          <tr onmouseout="nerv_stop()" onmouseover="nerv_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='nerv_image'><video  width="160" muted autoplay loop>
-                <source src="img/hotdog.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/hotdog.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function nerv_start() {
-                  document.getElementById('nerv_image').style.opacity = "1";
-                }
-
-                function nerv_stop() {
-                  document.getElementById('nerv_image').style.opacity = "0";
-                }
-                nerv_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://pratulsrinivasan.github.io/nerv/">
-                <papertitle>NeRV: Neural Reflectance and Visibility Fields for Relighting and View Synthesis</papertitle>
-              </a>
-              <br>
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <a href="https://boyangdeng.com/">Boyang Deng</a>,
-              <a href="https://people.csail.mit.edu/xiuming/">Xiuming Zhang</a>,
-              <a href="http://matthewtancik.com/">Matthew Tancik</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>
-              <br>
-        <em>CVPR</em>, 2021
-              <br>
-              <a href="https://pratulsrinivasan.github.io/nerv/">project page</a> /
-              <a href="https://arxiv.org/abs/2012.03927">arXiv</a> /
-              <a href="https://www.youtube.com/watch?v=4XyDdvhhjVo">video</a>
-              <p></p>
-              <p>We recover relightable NeRF-like models using neural approximations of expensive visibility integrals, so we can simulate complex volumetric light transport during training.</p>
-            </td>
-          </tr>
-    
-    
-          <tr onmouseout="ff_stop()" onmouseover="ff_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='ff_image'><img src='img/lion_ff.png' width="160"></div>
-                <img src='img/lion_none.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function ff_start() {
-                  document.getElementById('ff_image').style.opacity = "1";
-                }
-
-                function ff_stop() {
-                  document.getElementById('ff_image').style.opacity = "0";
-                }
-                ff_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="fourfeat/index.html">
-                <papertitle>Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains
-</papertitle>
-              </a>
-              <br>
-              <a href="http://matthewtancik.com/">Matthew Tancik*</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan*</a>,
-              <strong>Ben Mildenhall*</strong>,
-              <a href="https://people.eecs.berkeley.edu/~sfk/">Sara Fridovich-Keil</a>,
-              <a href="https://www.csua.berkeley.edu/~rnithin/">Nithin Raghavan</a>,
-              <a href="https://scholar.google.com/citations?user=lvA86MYAAAAJ&hl=en">Utkarsh Singhal</a>,
-              <a href="http://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>
-              <br>
-        <em>NeurIPS</em>, 2020  <font color="red"><strong>(spotlight)</strong></font>
-              <br>
-              <a href="fourfeat/index.html">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2006.10739">arXiv</a>
-        /
-              <a href="https://github.com/tancik/fourier-feature-networks">code</a>
-              <p></p>
-              <p>We demonstrate that composing fully-connected networks with a simple Fourier feature mapping allows them to learn much high frequency functions.</p>
-            </td>
-          </tr> 
-
-
-          <tr onmouseout="nrf_stop()" onmouseover="nrf_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='nrf_image'><video  width="160" muted autoplay loop>
-                <source src="img/neural_reflectance.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/neural_reflectance.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function nrf_start() {
-                  document.getElementById('nrf_image').style.opacity = "1";
-                }
-
-                function nrf_stop() {
-                  document.getElementById('nrf_image').style.opacity = "0";
-                }
-                nrf_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2008.03824">
-                <papertitle>Neural Reflectance Fields for Appearance Acquisition</papertitle>
-              </a>
-              <br>
-              <a href="http://cseweb.ucsd.edu/~bisai/">Sai Bi*</a>,
-              <a href="https://cseweb.ucsd.edu/~zex014/">Zexiang Xu*</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="http://www.kalyans.org/">Kalyan Sunkavalli</a>,
-              <a href="http://www.miloshasan.net/">Milos Hasan</a>,
-              <a href="http://yannickhold.com/">Yannick Hold-Geoffroy</a>,
-              <a href="https://cseweb.ucsd.edu/~kriegman/">David Kriegman</a>,
-              <a href="https://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>
-              <br>
-        <em>arXiv</em>, 2020
-              <br>
-              <a href="https://arxiv.org/abs/2008.03824">arXiv</a> 
-              <p></p>
-              <p>We recover relightable NeRF-like models by predicting per-location BRDFs and surface normals, and marching light rays through the NeRV volume to compute visibility.</p>
-            </td>
-          </tr>
-    
-    
-          <tr onmouseout="nerf_stop()" onmouseover="nerf_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='nerf_image'><video  width="160" muted autoplay loop>
-                <source src="img/vase_small.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/vase_still.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function nerf_start() {
-                  document.getElementById('nerf_image').style.opacity = "1";
-                }
-
-                function nerf_stop() {
-                  document.getElementById('nerf_image').style.opacity = "0";
-                }
-                nerf_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://www.matthewtancik.com/nerf">
-                <papertitle>NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
-</papertitle>
-              </a>
-              <br>
-              <strong>Ben Mildenhall*</strong>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan*</a>,
-              <a href="http://matthewtancik.com/">Matthew Tancik*</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <a href="http://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>,
-              <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>
-              <br>
-        <em>ECCV</em>, 2020   <font color="red"><strong>(Best Paper Honorable Mention)</strong></font>
-              <br>
-              <a href="http://www.matthewtancik.com/nerf">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2003.08934">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=JuH79E8rdKc">video</a>
-        /
-              <a href="https://www.youtube.com/watch?v=LRAqeM8EjOo">talk</a>
-        /
-              <a href="https://github.com/bmild/nerf">code</a>
-  /
-        <a href="https://www.youtube.com/watch?v=nCpGStnayHk">two minute papers</a>
-  /
-        <a href="https://paperswithcode.com/method/nerf">papers with code</a>
-  /
-        <a href="https://www.wired.com/story/new-way-ai-see-3d/">wired</a>
-              <p></p>
-              <p>We optimize a simple fully-connected network to represent a single scene as a volume, then use volume rendering to do view synthesis.</p>
-            </td>
-          </tr> 
-
-
-          <tr onmouseout="mdp_stop()" onmouseover="mdp_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="two" id='mdp_image'><video  width="160" muted autoplay loop>
-              <source src="img/mdp.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-              </video></div>
-                <img src='img/mdp.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function mdp_start() {
-                  document.getElementById('mdp_image').style.opacity = "1";
-                }
-
-                function mdp_stop() {
-                  document.getElementById('mdp_image').style.opacity = "0";
-                }
-                mdp_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2008.01815">
-                <papertitle>Deep Multi Depth Panoramas for View Synthesis</papertitle>
-              </a>
-              <br>
-              <a href="https://www.linkedin.com/in/kaienlin2576/">Kai-En Lin</a>,
-              <a href="https://cseweb.ucsd.edu/~zex014/">Zexiang Xu</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <a href="http://yannickhold.com/">Yannick Hold-Geoffroy</a>,
-              <a href="http://www.stephendiverdi.com/">Stephen DiVerdi</a>,
-              <a href="https://qisun.me/">Qi Sun</a>,
-              <a href="http://www.kalyans.org/">Kalyan Sunkavalli</a>,
-              <a href="https://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>
-              <br>
-        <em>ECCV</em>, 2020
-              <br>
-              <a href="https://arxiv.org/abs/2008.01815">arXiv</a> /
-              <a href="https://cseweb.ucsd.edu/~zex014/papers/2020_mdp/2020_mdp.mp4">video</a>
-              <p></p>
-              <p>We represent scenes as multi-layer panoramas with depth for VR view synthesis.</p>
-            </td>
-          </tr>
-
-    
-          <tr onmouseout="lighthouse_stop()" onmouseover="lighthouse_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="two" id='lh_image'><video  width="160" muted autoplay loop>
-              <source src="img/rings_crop.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-              </video></div>
-                <img src='img/rings.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function lighthouse_start() {
-                  document.getElementById('lh_image').style.opacity = "1";
-                }
-
-                function lighthouse_stop() {
-                  document.getElementById('lh_image').style.opacity = "0";
-                }
-                lighthouse_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://pratulsrinivasan.github.io/lighthouse/">
-                <papertitle>Lighthouse: Predicting Lighting Volumes for Spatially-Coherent Illumination</papertitle>
-              </a>
-              <br>
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan*</a>,
-              <strong>Ben Mildenhall*</strong>,
-              <a href="http://matthewtancik.com/">Matthew Tancik</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>,
-              <a href="https://research.google/people/RichardTucker/">Richard Tucker</a>,
-              <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>
-              <br>
-        <em>CVPR</em>, 2020  
-              <br>
-              <a href="https://pratulsrinivasan.github.io/lighthouse/">project page</a>
-        /
-              <a href="https://arxiv.org/abs/2003.08367">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=KsiZpUFPqIU">video</a>
-  /
-        <a href="https://github.com/pratulsrinivasan/lighthouse">code</a>
-              <p></p>
-              <p>We predict a volume from an input stereo pair that can be used to calculate incident lighting at any 3D point within a scene.</p>
-            </td>
-          </tr>  
-    
-          <tr onmouseout="stamp_stop()" onmouseover="stamp_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='stamp_image'><video  width="160" muted autoplay loop>
-                <source src="img/steg_small.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/stamp0.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function stamp_start() {
-                  document.getElementById('stamp_image').style.opacity = "1";
-                }
-
-                function stamp_stop() {
-                  document.getElementById('stamp_image').style.opacity = "0";
-                }
-                stamp_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://www.matthewtancik.com/stegastamp">
-                <papertitle>StegaStamp: Invisible Hyperlinks in Physical Photographs</papertitle>
-              </a>
-              <br>
-              <a href="http://matthewtancik.com/">Matthew Tancik*</a>,
-              <strong>Ben Mildenhall*</strong>,
-              <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>
-              <br>
-        <em>CVPR</em>, 2020  
-              <br>
-              <a href="http://www.matthewtancik.com/stegastamp">project page</a>
-        /
-              <a href="https://arxiv.org/abs/1904.05343">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=E8OqgNDBGO0">video</a>
-        /
-              <a href="https://github.com/tancik/StegaStamp">code</a>
-              <p></p>
-              <p>We can hide hyperlinks in natural images to create aesthetically pleasing barcodes.</p>
-            </td>
-          </tr>  
-    
-          <tr onmouseout="llff_stop()" onmouseover="llff_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='llff_image'><video  width="160" muted autoplay loop>
-                <source src="img/fern160.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/fern.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function llff_start() {
-                  document.getElementById('llff_image').style.opacity = "1";
-                }
-
-                function llff_stop() {
-                  document.getElementById('llff_image').style.opacity = "0";
-                }
-                llff_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="llff/index.html">
-                <papertitle>Local Light Field Fusion: Practical View Synthesis with Prescriptive Sampling Guidelines</papertitle>
-              </a>
-              <br>
-              <strong>Ben Mildenhall*</strong>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan*</a>,
-              <a href="https://scholar.google.com/citations?user=yZMAlU4AAAAJ">Rodrigo Ortiz-Cayon</a>,
-              <a href="http://faculty.cs.tamu.edu/nimak/">Nima Khademi Kalantari</a>,
-              <a href="http://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>,
-              <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>,
-              <a href="https://abhishekkar.info/">Abhishek Kar</a>
-              <br>
-        <em>SIGGRAPH</em>, 2019
-              <br>
-              <a href="llff/index.html">project page</a>
-        /
-              <a href="https://arxiv.org/abs/1905.00889">arXiv</a>
-        /
-              <a href="https://www.youtube.com/watch?v=LY6MgDUzS3M">video</a>
-        /
-              <a href="https://github.com/Fyusion/LLFF">code</a>
-              <p></p>
-              <p>We develop and analyze a deep learning method for rendering novel views of complex real world scenes.</p>
-            </td>
-          </tr>  
-    
-          <tr onmouseout="unprocessing_stop()" onmouseover="unprocessing_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='unprocessing_image'><img src='img/unprocessing_after.jpg'></div>
-                <img src='img/unprocessing_before.jpg'>
-              </div>
-              <script type="text/javascript">
-                function unprocessing_start() {
-                  document.getElementById('unprocessing_image').style.opacity = "1";
-                }
-
-                function unprocessing_stop() {
-                  document.getElementById('unprocessing_image').style.opacity = "0";
-                }
-                unprocessing_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://timothybrooks.com/tech/unprocessing/">
-                <papertitle>Unprocessing Images for Learned Raw Denoising</papertitle>
-              </a>
-              <br>
-              <a href="http://timothybrooks.com/">Tim Brooks</a>,
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://people.csail.mit.edu/tfxue/">Tianfan Xue</a>,
-              <a href="http://people.csail.mit.edu/jiawen/">Jiawen Chen</a>,
-              <a href="http://www.dsharlet.com/">Dillon Sharlet</a>,
-              <a href="https://jonbarron.info/">Jonathan T. Barron</a>
-              <br>
-        <em>CVPR</em>, 2019   <font color="red"><strong>(oral)</strong></font>
-              <br>
-              <a href="http://timothybrooks.com/tech/unprocessing/">project page</a>
-        /
-        <a href="https://arxiv.org/abs/1811.11127">arXiv</a>
-              <p></p>
-              <p>We can learn a better denoising model by processing and unprocessing images the same way a camera does.</p>
-            </td>
-          </tr>
-
-    <tr onmouseout="kpn_stop()" onmouseover="kpn_start()" >
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-        <div class="two" id = 'kpn_image'><img src='img/kpn1.png' width="160"></div>
-        <img src='img/kpn0.png' width="160">
-        </div>
-        <script type="text/javascript">
-        function kpn_start() {
-        document.getElementById('kpn_image').style.opacity = "1";
-        }
-        function kpn_stop() {
-        document.getElementById('kpn_image').style.opacity = "0";
-        }
-        kpn_stop()
-        </script>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <p><a href="kpn/index.html">
-        <papertitle>Burst Denoising with Kernel Prediction Networks</papertitle></a><br>
-          <strong>Ben Mildenhall</strong>,
-          <a href="http://jonbarron.info">Jonathan T. Barron</a>,
-          <a href="http://people.csail.mit.edu/jiawen/">Jiawen Chen</a>,
-          <a href="http://www.dsharlet.com/">Dillon Sharlet</a>,
-          <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>,
-          <a href="https://scholar.google.com/citations?user=jCsry6sAAAAJ&hl=en">Robert Carroll</a> <br>
-        <em>CVPR</em>, 2018   <font color="red"><strong>(spotlight)</strong></font><br>
-        <a href="kpn/index.html">project page</a>
-        /
-        <a href="https://arxiv.org/abs/1712.02327">arXiv</a>
-  /
-  <a href="https://github.com/google/burst-denoising">code</a>
-        <p></p>
-        <p>We train a network to predict linear kernels that denoise bursts of raw linear images.</p>
-      </td>
-    </tr>
-
-      <tr>
-      <tr onmouseout="dcam_stop()" onmouseover="dcam_start()" >
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <div class="one">
-          <div class="two" id = 'dcam_image'><img src='img/dcam1.png' width="160"></div>
-          <img src='img/dcam0.png' width="160">
+      </div>
+
+      <div class="highlight-grid">
+        <a class="highlight-card reveal" href="https://fastgs.github.io/" target="_blank" rel="noreferrer">
+          <div class="highlight-media">
+            <video muted autoplay loop playsinline preload="metadata" aria-hidden="true">
+              <source src="img/fastgs_video.mp4" type="video/mp4">
+            </video>
+            <span class="card-index">01</span>
           </div>
-          <script type="text/javascript">
-          function dcam_start() {
-          document.getElementById('dcam_image').style.opacity = "1";
-          }
-          function dcam_stop() {
-          document.getElementById('dcam_image').style.opacity = "0";
-          }
-          dcam_stop()
-          </script>
-        </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <p>
-          <a href="https://waller-lab.github.io/DiffuserCam/">
-          <papertitle>DiffuserCam: Lensless Single-exposure 3D Imaging</papertitle>
+          <div class="highlight-copy">
+            <div class="meta-row">
+              <span class="tag">3DGS</span>
+              <span>Acceleration</span>
+            </div>
+            <h3>FastGS</h3>
+            <p>Training 3D Gaussian Splatting in 100 seconds.</p>
+            <span class="text-link">View project <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+
+        <a class="highlight-card reveal" href="https://segs-slam.github.io/" target="_blank" rel="noreferrer">
+          <div class="highlight-media">
+            <video muted autoplay loop playsinline preload="metadata" aria-hidden="true">
+              <source src="img/segsslam_tumrgbd.mp4" type="video/mp4">
+            </video>
+            <span class="card-index">02</span>
+          </div>
+          <div class="highlight-copy">
+            <div class="meta-row">
+              <span class="tag">ICCV 2025</span>
+              <span>3DGS SLAM</span>
+            </div>
+            <h3>SEGS-SLAM</h3>
+            <p>Structure-enhanced Gaussian Splatting with appearance embedding.</p>
+            <span class="text-link">View project <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+
+        <a class="highlight-card reveal" href="https://youtu.be/8p0a-cK7LZ0" target="_blank" rel="noreferrer">
+          <div class="highlight-media">
+            <video muted autoplay loop playsinline preload="metadata" aria-hidden="true">
+              <source src="img/liver_x264.mp4" type="video/mp4">
+            </video>
+            <span class="card-index">03</span>
+          </div>
+          <div class="highlight-copy">
+            <div class="meta-row">
+              <span class="tag">RA-L 2024</span>
+              <span>Oral</span>
+            </div>
+            <h3>LIVER</h3>
+            <p>Robust LiDAR-inertial-visual state estimation underground.</p>
+            <span class="text-link">Watch video <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section shell" id="research">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">Research</p>
+          <h2>Selected papers and systems.</h2>
+        </div>
+        <p class="section-note">Peer-reviewed work and recent preprints.</p>
+      </div>
+
+      <div class="research-list">
+        <article class="research-item reveal">
+          <a class="media-preview" href="https://arxiv.org/abs/2511.04283" target="_blank" rel="noreferrer" aria-label="Open the FastGS paper">
+            <img src="img/fastgs_image.jpeg" alt="FastGS densification comparison" loading="lazy" width="901" height="1311">
+            <video muted loop playsinline preload="none" data-preview-video aria-hidden="true">
+              <source src="img/fastgs_video.mp4" type="video/mp4">
+            </video>
+            <span class="preview-label">Hover to preview</span>
           </a>
-          <br>
-          <a href="https://people.eecs.berkeley.edu/~nick.antipa/">Nick Antipa</a>, 
-          <a href="https://people.eecs.berkeley.edu/~gkuo/">Grace Kuo</a>, 
-          <a href="http://www.reinhardheckel.com/">Reinhard Heckel</a>, 
-          <strong>Ben Mildenhall</strong>, 
-          <a href="https://emrahbostan.com/">Emrah Bostan</a>, 
-          <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>, 
-            <a href="http://www.laurawaller.com/">Laura Waller</a><br>
-          <em>Optica</em>, 2018 <br>
-          <a href="https://waller-lab.github.io/DiffuserCam/">project page</a>
-          /
-          <a href="https://arxiv.org/abs/1710.02134">arXiv</a>
-        </p>
-        <p>Using a diffuser instead of a lens lets you recover 3D in a single exposure.</p>
-        </td>
-      </tr>
+          <div class="research-copy">
+            <div class="meta-row">
+              <span class="tag">Preprint</span>
+              <span>3D Gaussian Splatting</span>
+            </div>
+            <h3><a href="https://arxiv.org/abs/2511.04283" target="_blank" rel="noreferrer">FastGS: Training 3D Gaussian Splatting in 100 Seconds</a></h3>
+            <p class="authors">
+              Shiwei Ren<sup>*</sup>, <strong>Tianci Wen</strong><sup>*</sup>,
+              <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244" target="_blank" rel="noreferrer">Yongchun Fang</a><sup>†</sup>,
+              <a href="https://ai.nankai.edu.cn/info/1034/5388.htm" target="_blank" rel="noreferrer">Biao Lu</a>
+            </p>
+            <p class="summary">
+              A densification strategy for fast, efficient 3D Gaussian Splatting optimization.
+            </p>
+            <div class="paper-links" aria-label="FastGS links">
+              <a href="https://arxiv.org/abs/2511.04283" target="_blank" rel="noreferrer">arXiv</a>
+              <a href="https://fastgs.github.io/" target="_blank" rel="noreferrer">Project</a>
+              <a href="https://github.com/fastgs/FastGS" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle"><img src="img/microflakes.png" alt="microflakes" width="160" height="160"></td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <p>
-          <a href="data/microflake.pdf">
-          <papertitle>Approximations for the distribution of microflake normals</papertitle>
+        <article class="research-item reveal">
+          <a class="media-preview" href="https://segs-slam.github.io/" target="_blank" rel="noreferrer" aria-label="Open the SEGS-SLAM project">
+            <img src="img/30000_318.jpg" alt="SEGS-SLAM reconstruction result" loading="lazy" width="640" height="480">
+            <video muted loop playsinline preload="none" data-preview-video aria-hidden="true">
+              <source src="img/segsslam_tumrgbd.mp4" type="video/mp4">
+            </video>
+            <span class="preview-label">Hover to preview</span>
           </a>
-          <br>
-          <a href="https://faculty.engineering.ucdavis.edu/max/">Nelson Max</a>, 
-          <a href="http://www.iq0.com/">Tom Duff</a>, 
-          <strong>Ben Mildenhall</strong>, 
-          <a href="http://students.cec.wustl.edu/~yajieyan/">Yajie Yan</a><br>
-          <em>The Visual Computer</em>, 2017
-        </p>
-        <p>We precompute microflake approximations to make rendering large meshes at a distance more efficient.</p>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle"><img src="img/sosmc.png" alt="sosmc" width="160"></td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <p>
-        <p>
-          <a href="https://dritchie.github.io/pdf/sosmc.pdf">
-          <papertitle>Controlling Procedural Modeling Programs with Stochastically-Ordered Sequential Monte Carlo</papertitle>
+          <div class="research-copy">
+            <div class="meta-row">
+              <span class="tag">ICCV 2025</span>
+              <span>3DGS SLAM</span>
+            </div>
+            <h3><a href="https://arxiv.org/abs/2501.05242" target="_blank" rel="noreferrer">SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding</a></h3>
+            <p class="authors">
+              <strong>Tianci Wen</strong>, Zhiang Liu,
+              <a href="https://ai.nankai.edu.cn/info/1034/5388.htm" target="_blank" rel="noreferrer">Biao Lu</a>,
+              <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244" target="_blank" rel="noreferrer">Yongchun Fang</a><sup>*</sup>
+            </p>
+            <p class="summary">
+              A structure-aware Gaussian Splatting SLAM system with appearance embedding for robust reconstruction.
+            </p>
+            <div class="paper-links" aria-label="SEGS-SLAM links">
+              <a href="https://arxiv.org/abs/2501.05242" target="_blank" rel="noreferrer">arXiv</a>
+              <a href="https://segs-slam.github.io/" target="_blank" rel="noreferrer">Project</a>
+              <a href="https://zhuanlan.zhihu.com/p/1922411865323045454/preview?comment=0&amp;catalog=0" target="_blank" rel="noreferrer">Zhihu</a>
+              <a href="https://github.com/leaner-forever/SEGS-SLAM" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="research-item reveal">
+          <a class="media-preview" href="https://ieeexplore.ieee.org/document/10404014" target="_blank" rel="noreferrer" aria-label="Open the LIVER paper">
+            <img src="img/mine.png" alt="Underground mine environment used for LIVER evaluation" loading="lazy" width="1481" height="834">
+            <video muted loop playsinline preload="none" data-preview-video aria-hidden="true">
+              <source src="img/liver_x264.mp4" type="video/mp4">
+            </video>
+            <span class="preview-label">Hover to preview</span>
           </a>
-          <br>
-          <a href="https://dritchie.github.io/">Daniel Ritchie</a>, 
-          <strong>Ben Mildenhall</strong>, 
-          <a href="http://cocolab.stanford.edu/ndg.html">Noah D. Goodman</a>, 
-          <a href="https://graphics.stanford.edu/~hanrahan">Pat Hanrahan</a><br>
-          <em>SIGGRAPH</em>, 2015
-        </p>
-        <p>We improve control over the output of highly-variable procedural modeling programs by using SOSMC to provide incremental feedback on partially-generated models.</p>
-        </p>
-        </td>
-      </tr>
+          <div class="research-copy">
+            <div class="meta-row">
+              <span class="tag">RA-L 2024</span>
+              <span>Oral · State Estimation</span>
+            </div>
+            <h3><a href="https://ieeexplore.ieee.org/document/10404014" target="_blank" rel="noreferrer">LIVER: A Tightly Coupled LiDAR-Inertial-Visual State Estimator With High Robustness for Underground Environments</a></h3>
+            <p class="authors">
+              <strong>Tianci Wen</strong>,
+              <a href="https://nankai.teacher.360eol.com/teacherBasic/preview?teacherId=10244" target="_blank" rel="noreferrer">Yongchun Fang</a><sup>*</sup>,
+              <a href="https://ai.nankai.edu.cn/info/1034/5388.htm" target="_blank" rel="noreferrer">Biao Lu</a>,
+              <a href="https://rh.nankai.edu.cn/info/1016/1136.htm" target="_blank" rel="noreferrer">Xuebo Zhang</a>,
+              <a href="https://cmee.cumt.edu.cn/info/1116/5210.htm" target="_blank" rel="noreferrer">Chaoquan Tang</a>
+            </p>
+            <p class="summary">
+              Tightly coupled multi-sensor localization and mapping for challenging underground environments.
+            </p>
+            <div class="paper-links" aria-label="LIVER links">
+              <a href="https://ieeexplore.ieee.org/document/10404014" target="_blank" rel="noreferrer">Paper</a>
+              <a href="https://youtu.be/8p0a-cK7LZ0" target="_blank" rel="noreferrer">Video</a>
+              <a href="img/LIVER_GraphicalAbstract.jpg">Poster</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        </tbody></table>
+    <section class="section shell" id="projects">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">Projects</p>
+          <h2>Robotics, tested in the real world.</h2>
+        </div>
+        <p class="section-note">Systems work across sensing, estimation, navigation, and industrial deployment.</p>
+      </div>
 
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-        <tr>
-          <td>
-            <heading>Course Projects</heading>
-          </td>
-        </tr>
-      </tbody></table>
-      <table width="100%" align="center" border="0" cellpadding="20"><tbody>  
-      <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <a href="img/objtest20.png"><img src="img/objtest20.png" alt="prl" width="160"></a></td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <p>
-        <p>
-          <a href="data/cs348bproject.pdf">
-          <papertitle>Extending the PBRT Renderer to Support Volumetric Light Sources</papertitle>
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <a class="project-media" href="https://youtu.be/8p0a-cK7LZ0" target="_blank" rel="noreferrer" aria-label="Watch the snake robot project video">
+            <img src="img/snake_lvi.jpg" alt="Snake robot with LiDAR-inertial-visual sensing" loading="lazy" width="1513" height="1049">
+            <video muted loop playsinline preload="none" data-preview-video aria-hidden="true">
+              <source src="img/snake_x264.mp4" type="video/mp4">
+            </video>
           </a>
-          <br>
-          <em>Grand prize in <a href="https://graphics.stanford.edu/courses/cs348b-competition/">CS384B rendering competition</a></em>, Spring 2013
-        </p>
-        <p>
-          Adding support for multicolored, nonhomogeneous, emissive volumes in PBRT 2's path tracing integrator. 
-        </p>
-        </p>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src="img/cs148_rt.jpg" alt="prl" width="160"></td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <p>
-        <p>
-          <a href="cs148_raytracer/index.html">
-          <papertitle>Ray Tracer</papertitle>
+          <div class="project-copy">
+            <div class="meta-row">
+              <span class="tag">State estimation</span>
+              <span>Since Dec. 2023</span>
+            </div>
+            <h3>Snake robot sensing</h3>
+            <p>
+              Integrated LiDAR, camera, and IMU in a compact system, achieving centimeter-level
+              localization across multiple gaits and speeds.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <a class="project-media" href="img/wheeled-leg1.mp4" target="_blank" rel="noreferrer" aria-label="Open the wheeled-leg robot video">
+            <img src="img/wl_rob.jpg" alt="Wheeled-leg robot" loading="lazy" width="1024" height="1024">
+            <video muted loop playsinline preload="none" data-preview-video aria-hidden="true">
+              <source src="img/wheeled-leg1.mp4" type="video/mp4">
+            </video>
           </a>
-          <br>
-          <em>CS148 assignment</em>, Fall 2012
-        </p>
+          <div class="project-copy">
+            <div class="meta-row">
+              <span class="tag">Navigation</span>
+              <span>2021–2022</span>
+            </div>
+            <h3>Wheeled-leg navigation</h3>
+            <p>
+              Indoor navigation built on ROS move_base and LiDAR-inertial odometry for a
+              wheeled-leg robot.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <a class="project-media" href="img/crane.mp4" target="_blank" rel="noreferrer" aria-label="Open the intelligent crane project video">
+            <img src="img/crane_sensors.jpg" alt="Sensor system installed on an industrial crane" loading="lazy" width="2236" height="1207">
+            <video muted loop playsinline preload="none" data-preview-video aria-hidden="true">
+              <source src="img/crane.mp4" type="video/mp4">
+            </video>
+          </a>
+          <div class="project-copy">
+            <div class="meta-row">
+              <span class="tag">Industrial SLAM</span>
+              <span>Since late 2023</span>
+            </div>
+            <h3>L3 intelligent crane</h3>
+            <p>
+              Software, hardware, and SLAM system development for a giant industrial crane.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell about-section" id="about">
+      <div class="about-intro reveal">
+        <p class="section-kicker">About</p>
+        <h2>From geometry and perception to simulation.</h2>
         <p>
-          Implemented a ray tracer with reflections, refractions, soft shadows, and depth of field.
+          My research sits between 3D vision and robotics: reconstructing scenes with high
+          geometric fidelity, generating novel views, and evaluating whether those worlds remain
+          useful once a policy or perception stack is placed inside them.
         </p>
-        </p>
-        </td>
-      </tr>
-      </tbody></table>
+      </div>
 
--->
+      <div class="about-details reveal">
+        <div class="timeline">
+          <div class="timeline-item">
+            <span>Now</span>
+            <div>
+              <h3>PhD researcher</h3>
+              <p>Nankai University · advised by Prof. Yongchun Fang</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span>2025</span>
+            <div>
+              <h3>Research intern</h3>
+              <p>DJI · since April 2025</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span>2017–21</span>
+            <div>
+              <h3>Undergraduate</h3>
+              <p>Jilin University</p>
+            </div>
+          </div>
+        </div>
 
+        <div class="recognition">
+          <div>
+            <p class="mini-heading">With thanks</p>
+            <p>
+              <a href="https://rh.nankai.edu.cn/info/1037/1146.htm" target="_blank" rel="noreferrer">Zhixing Song</a>
+              for guidance in SLAM and research, and
+              <a href="https://github.com/ghm0819/ghm0819.github.io" target="_blank" rel="noreferrer">Haiming Gao</a>
+              for guidance on research direction.
+            </p>
+          </div>
+          <div>
+            <p class="mini-heading">Earlier work in control</p>
+            <ul class="paper-list">
+              <li>
+                <a href="https://doi.org/10.1007/s43684-021-00019-7" target="_blank" rel="noreferrer">
+                  Neural network-based adaptive sliding mode control for underactuated dual overhead cranes
+                </a>
+                <span>Autonomous Intelligent Systems, 2022</span>
+              </li>
+              <li>
+                <a href="http://dx.chinadoi.cn/10.16383/j.aas.c211062" target="_blank" rel="noreferrer">
+                  Adaptive antiswing control for underactuated dual overhead crane systems using neural networks
+                </a>
+                <span>Acta Automatica Sinica, 2023</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-
-    </td>
-    </tr>
-  </table>
-  </body>
+  <footer class="site-footer">
+    <div class="shell footer-main">
+      <div>
+        <p class="section-kicker">Contact</p>
+        <h2>Let’s make simulated worlds more useful.</h2>
+      </div>
+      <a class="footer-email" href="mailto:wentc@mail.nankai.edu.cn">
+        wentc@mail.nankai.edu.cn <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <div class="shell footer-base">
+      <span>© <span data-current-year>2026</span> Tianci Wen</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
 </html>
